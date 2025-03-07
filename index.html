@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="valentines-day-card">
+        <input id="open" type="checkbox">
+        <label class="open" for="open"></label>
+      <div class="card-front">
+        <div class="note">Click to Open</div>
+      </div>
+        
+      <div class="card-inside">
+            <div class="text-one">Happy</div>
+            <div class="heart"></div>
+            <div class="smile"></div>
+            <div class="eyes"></div>
+            <p class="message text-center text-lg font-semibold text-pink-600 animate-fade-in" id="message">
+                You're the most special person in my life! ❤️..<br>
+                <span class="text-2xl font-bold text-red-500">Hi Pagli 😘</span><br>
+                <span class="italic text-gray-700">Little effort from my side..</span><br>
+                <span class="font-bold text-blue-500">You deserve this! 💖</span>
+            </p>
+            
+        </div>
+
+        <div class="relative p-4 w-full max-w-2xl max-h-full flex items-center justify-center -top-[215px] left-0 z-50">
+            <button id="delayed-button1" onclick="showModal()" class="fade-in block text-white bg-[#000] hover:bg-[#d04e4e] font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                Click Me
+            </button>
+        </div>
+        
+        
+    </div>
+
+
+<!-- Modal -->
+<div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50">
+    <div class="relative w-full max-w-2xl p-4">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-800">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 border-b rounded-t dark:border-gray-700">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    See This
+                </h3>
+                <button type="button" class="text-gray-400 hover:text-gray-900 dark:hover:text-white" onclick="closeModal()">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Modal body with YouTube Video -->
+            <div class="p-4">
+                <iframe class="w-full h-64 md:h-80 lg:h-96" src="https://www.youtube.com/embed/fPokcogKG-M" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <!-- Modal body with Video -->
+            <!-- <div class="p-4">
+                <video class="w-full" controls>
+                    <source src="Tera-ban-jaauga-promo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div> -->
+            <!-- Modal footer -->
+            <div class="flex items-center justify-center p-4 border-t dark:border-gray-700">
+                <button id="delayed-button" onclick="showAlert()" class="text-white bg-red-600 hover:bg-red-700 rounded-lg px-4 py-2 text-sm hidden">
+                    Click Me
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    function showModal() {
+        document.getElementById('default-modal').classList.remove('hidden');
+
+        // Pehle ensure karein button hidden ho
+        let btn = document.getElementById('delayed-button');
+        btn.classList.add('hidden');
+
+        // 43 sec (43000ms) ke baad button show hoga
+        setTimeout(() => {
+            btn.classList.remove('hidden');
+        }, 43000); 
+    }
+
+    function closeModal() {
+        document.getElementById('default-modal').classList.add('hidden');
+    }
+
+    function showAlert() {
+        alert("Surprise! 🚚 Your order is on the way! Get ready to receive it soon. Track your order for real-time updates. Thank you for choosing ME! ❤️");
+    }
+</script>
+
+<script>
+    setTimeout(() => {
+        document.getElementById('delayed-button1').classList.add('show');
+    }, 15000);
+</script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+</html>
